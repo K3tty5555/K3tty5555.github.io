@@ -1,0 +1,24 @@
+:root { color-scheme: light; --bg: #f7f8fa; --text: #20242b; --muted: #68707d; --line: #dfe3e8; --link: #176f69; --code: #eef0f3; }
+@media (prefers-color-scheme: dark) { :root { color-scheme: dark; --bg: #16181d; --text: #e6e8ec; --muted: #a2a9b4; --line: #363c48; --link: #55bbb2; --code: #22262e; } }
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; }
+body { margin: 0; }
+.topbar { position: sticky; z-index: 2; top: 0; display: flex; min-height: 54px; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); background: var(--bg); padding: 0 max(20px, calc((100vw - 860px) / 2)); }
+.brand { color: var(--text); font-weight: 700; text-decoration: none; }
+.languages { display: flex; gap: 14px; }
+.languages a { color: var(--muted); font-size: 13px; text-decoration: none; }
+.languages a[aria-current='page'] { color: var(--text); font-weight: 650; }
+main { width: min(100% - 40px, 860px); margin: 0 auto; padding: 54px 0 88px; }
+h1 { margin: 0 0 20px; font-size: 38px; line-height: 1.15; letter-spacing: 0; }
+h2 { margin: 48px 0 16px; border-top: 1px solid var(--line); padding-top: 30px; font-size: 23px; letter-spacing: 0; }
+h3 { margin: 28px 0 10px; font-size: 18px; letter-spacing: 0; }
+p, li { font-size: 15px; line-height: 1.75; }
+p:first-of-type { color: var(--muted); }
+a { color: var(--link); overflow-wrap: anywhere; }
+.table-scroll { width: 100%; overflow-x: auto; }
+.table-scroll:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { min-width: 140px; border-bottom: 1px solid var(--line); padding: 12px 14px 12px 0; text-align: left; vertical-align: top; line-height: 1.55; }
+th { color: var(--muted); font-weight: 650; }
+code { border-radius: 4px; background: var(--code); padding: 2px 5px; overflow-wrap: anywhere; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+@media (max-width: 560px) { .topbar { padding-inline: 18px; } main { width: calc(100% - 36px); padding-top: 38px; } h1 { font-size: 32px; } h2 { margin-top: 40px; font-size: 21px; } }

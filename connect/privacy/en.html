@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'none'; style-src 'self'; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Connect Privacy Policy</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><a class="brand" href="index.html">Connect</a><nav class="languages" aria-label="Language"><a href="zh-Hans.html">简体中文</a><a href="en.html" aria-current="page">English</a></nav></header><main><h1>Connect Privacy Policy</h1>
+<p>Version: Release Candidate 1.0</p>
+<p>Last updated: August 25, 2026</p>
+<p>Effective date: 2026-08-25</p>
+<p>This Privacy Policy explains how ketty Wu (the &quot;Connect Operator,&quot; &quot;we,&quot; or &quot;us&quot;)
+handles and protects information when you use the Connect Mac app, the Connect iPhone companion,
+and official Connect websites that link to this Policy. The Connect Operator can be reached at
+<a href="mailto:w494892858@gmail.com">w494892858@gmail.com</a>.</p>
+<p>Connect is a local-first tool. It has no Connect account or hosted model service. The app&#x27;s primary
+data stays on the Mac and iPhone you control. The iPhone companion connects directly to your own Mac
+over a private network only after explicit pairing.</p>
+<h2>1. Scope</h2>
+<p>This Policy applies to:</p>
+<ul>
+<li>the Connect Mac app and Connect iPhone companion;</li>
+<li>official Connect download, support, and compatibility pages that link to this Policy; and</li>
+<li>support or privacy requests you choose to send us.</li>
+</ul>
+<p>This Policy does not govern Claude, Codex, Tailscale, Apple, or other independent third-party
+services. Your relationship with those services is governed by their own terms and privacy policies.</p>
+<h2>2. Key Points</h2>
+<ul>
+<li>We do not collect your project files, terminal content, prompts, model responses, pairing records,
+or credentials through Connect-operated servers.</li>
+<li>Connect contains no advertising, behavioral tracking, analytics SDK, or automatic crash or
+diagnostic upload.</li>
+<li>We do not sell personal information, share it for cross-context behavioral advertising, or create
+advertising profiles.</li>
+<li>Connect does not read Claude or Codex authentication files and does not store, proxy, or upload
+their tokens, passwords, or API keys.</li>
+<li>Content may reach a third-party provider only when you explicitly run its CLI or send an image.</li>
+</ul>
+<h2>3. Information Processed on Your Devices</h2>
+<p>Connect processes the following information on your devices to provide features you request. Except
+for user-directed third-party actions described in Section 5, the Connect Operator cannot access it.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table node="[object Object]"><thead><tr><th>Category</th><th>Where it is processed</th><th>Purpose</th></tr></thead><tbody><tr><td>Workspace paths, file contents, file names, and Git status</td><td>Your Mac</td><td>Browse and edit files and run workflows</td></tr><tr><td>Terminal input, output, and session state</td><td>Your Mac; an authorized iPhone may view or enter encrypted content</td><td>Run your own Shell, Claude, or Codex CLI</td></tr><tr><td>Collaboration task state, room history, attachments, and artifact summaries</td><td>Your Mac</td><td>Local history, recovery, and orchestration</td></tr><tr><td>Recent projects, layouts, launch commands, avatar, theme, and language</td><td>The relevant device</td><td>Save local preferences</td></tr><tr><td>Pairing public keys, device name, private-network address, scopes, and revocation time</td><td>Secure storage on your Mac and iPhone</td><td>Authenticate, authorize, connect, and revoke devices</td></tr><tr><td>Content-free security audit and performance timing records</td><td>The relevant device</td><td>Diagnose authorization, protocol, and performance issues</td></tr></tbody></table></div>
+<p>Workspace files remain in the location you selected. Removing a project from Connect&#x27;s recent list
+does not delete the original files.</p>
+<h2>4. Direct Mac-to-iPhone Connection</h2>
+<p>The mobile bridge is off by default. It listens on one specific Tailscale or private LAN address only
+after you enable it in Mac settings. Connect does not use a public relay, Tailscale Funnel, UPnP, or
+NAT port mapping.</p>
+<p>Pairing requires scanning a QR code and comparing a short authentication string on both devices.
+Connections use application-layer encryption and device identity verification. New devices are
+read-only by default. Write access must be granted separately on the Mac and may be withdrawn or
+revoked at any time. Security audit records do not contain terminal content, prompts, model
+responses, file contents, or tokens.</p>
+<h2>5. Third-Party CLIs and Services</h2>
+<h3>Claude and Codex</h3>
+<p>You install, license, and sign in to Claude Code and the Codex CLI yourself. Connect only starts and
+orchestrates local CLIs. It does not provide third-party accounts, models, tokens, subscriptions, or
+credits.</p>
+<p>When you explicitly send a command, image, or collaboration task to Claude or Codex, that CLI may
+send the following to its provider: your input, selected images, workspace content read to complete
+the task, and technical metadata generated by the CLI. What is sent, retained, used for model
+improvement, and processed by region depends on your third-party account settings and the provider&#x27;s
+policy. See:</p>
+<ul>
+<li>Anthropic Privacy Policy: <a href="https://www.anthropic.com/legal/privacy">https://www.anthropic.com/legal/privacy</a></li>
+<li>OpenAI Privacy Policy: <a href="https://openai.com/policies/privacy-policy/">https://openai.com/policies/privacy-policy/</a></li>
+</ul>
+<p>Connect does not accept provider terms for you or bypass provider login and first-use confirmation.
+You select these services independently; the Connect Operator does not appoint them to collect app
+data on our behalf. If we later appoint a provider to process app data for us, we will update this
+Policy before enabling that processing and require protections no less protective than this Policy
+and applicable law.</p>
+<h3>Tailscale</h3>
+<p>If you choose Tailscale, Connect uses the private address assigned to your devices to establish a
+direct connection. Connect does not bundle the Tailscale SDK or manage your Tailscale account.
+Tailscale may process device and connection metadata under its own policy:
+<a href="https://tailscale.com/privacy-policy">https://tailscale.com/privacy-policy</a>.</p>
+<h3>Apple</h3>
+<p>Apple may independently process information for App Store distribution, system permissions, system
+diagnostics, and store transactions. That processing is governed by Apple&#x27;s policies and your Apple
+settings. The Connect Operator does not receive Apple system diagnostics through the app unless you
+affirmatively choose to send them to us.</p>
+<h2>6. Device Permissions</h2>
+<ul>
+<li><strong>Camera:</strong> Used only to scan the pairing QR code displayed by your Mac. Connect does not record,
+retain, or upload photos or video.</li>
+<li><strong>Photo picker:</strong> Only images you explicitly select enter a terminal or room transfer. Connect does
+not request access to browse your entire photo library.</li>
+<li><strong>Local network:</strong> Used to connect to your own Mac. If denied, you can restore access in system
+settings.</li>
+</ul>
+<p>You can withdraw system permissions in iOS Settings at any time. Features that require a withdrawn
+permission will stop working, while unrelated features remain available.</p>
+<h2>7. Official Websites and Support Communications</h2>
+<p>Official Connect pages use no advertising, tracking pixels, or analytics scripts. To deliver pages
+and prevent abuse, the hosting or CDN provider may temporarily process IP address, request time,
+requested path, browser or User-Agent, response status, and security events. Before public release,
+we must select providers subject to appropriate confidentiality and security obligations, and
+ordinary access logs must be configured for retention of no more than 30 days, except when longer
+retention is necessary for a security incident or legal obligation.</p>
+<p>If you contact us by email or another support channel, we process your contact details, message, and
+files you choose to attach only to respond, troubleshoot, and keep required compliance records.
+Ordinary support records are retained for no more than 24 months after closure, unless law, dispute
+handling, or your earlier deletion request requires otherwise. Do not send passwords, tokens,
+private keys, or unnecessary project content.</p>
+<h2>8. Retention and Deletion</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table node="[object Object]"><thead><tr><th>Data</th><th>Default retention</th><th>How to delete or stop processing</th></tr></thead><tbody><tr><td>Live terminal content</td><td>Exists with the PTY session; security audits do not copy it</td><td>Close the terminal or quit the app</td></tr><tr><td>Room history, task state, and local artifacts</td><td>Stored on your Mac until you clear/delete them or remove app data</td><td>Use in-app clear/delete actions; manage original workspace files separately</td></tr><tr><td>Temporary terminal images</td><td>About two minutes at most, or until submission/app exit</td><td>Automatically deleted</td></tr><tr><td>Room attachments</td><td>Stored with the related local room history</td><td>Clear room history or remove app data</td></tr><tr><td>Mac security audit</td><td>Current and one rotated file, each up to 5 MiB</td><td>Remove Connect app data from the Mac</td></tr><tr><td>Mac performance timing</td><td>Current and one rotated file, each up to 2 MiB</td><td>Remove Connect app data from the Mac</td></tr><tr><td>iPhone performance timing</td><td>Up to 1,024 local records</td><td>Remove app data</td></tr><tr><td>Pairing records</td><td>Retained while active; revoked records remain as local security tombstones</td><td>&quot;Unpair&quot; removes the iPhone connection profile; Mac revocation immediately stops access; removing app data deletes local records</td></tr><tr><td>Device private keys</td><td>Managed by macOS/iOS secure storage and never provided to the Operator</td><td>Controlled by the device secure-storage lifecycle; the Operator has no copy to delete</td></tr></tbody></table></div>
+<p>Uninstalling the Mac app alone may leave data in Application Support. In Finder, use Go to Folder and
+remove <code>~/Library/Application Support/connect</code> if you want to remove local room history, task state,
+settings, pairing, and audit records. Removing Connect data does not automatically delete selected
+workspace files or data held in your Claude, Codex, Tailscale, or Apple accounts.</p>
+<h2>9. Security</h2>
+<p>Connect uses measures such as Workspace Trust, canonical-path and symlink boundaries, a sandboxed
+renderer, system secure storage, device pairing, authenticated encryption, least-privilege scopes,
+revocation, rate limits, and bounded content-free audit records. Public Mac builds also require
+Developer ID signing and Apple notarization. No software or transmission method can guarantee
+absolute security. Trust only workspaces you understand, and protect your devices, third-party
+accounts, and private network.</p>
+<h2>10. International Processing</h2>
+<p>The Connect Operator does not transfer local app data to its own servers. Third-party CLIs,
+Tailscale, Apple, website hosting/CDN providers, or support services you choose may process
+information in the countries where they operate and use transfer mechanisms described in their own
+policies. You decide whether to use these independent services.</p>
+<h2>11. Your Rights and Choices</h2>
+<p>Depending on applicable law, you may have rights to access, correct, delete, restrict, or object to
+our processing of personal information; withdraw consent; obtain a copy; and complain to a
+regulator. Because primary app data stays only on your devices, we normally have no server copy to
+return or delete. You can inspect, modify, or delete it directly on the device. For website logs or
+support records you sent us, contact <a href="mailto:w494892858@gmail.com">w494892858@gmail.com</a>. We may need to verify a request, and legal
+exceptions may apply.</p>
+<p>We do not sell or share personal information for cross-context behavioral advertising, use sensitive
+personal information to infer characteristics, or discriminate against you for exercising a privacy
+right.</p>
+<h2>12. Children</h2>
+<p>Connect is a developer tool. It is not directed to children under 16 and is not intended for the App
+Store Kids Category. We do not knowingly collect children&#x27;s personal information through a Connect
+service. Contact us if you believe a child submitted information through a support channel.</p>
+<h2>13. Changes to This Policy</h2>
+<p>We will update this Policy when product capabilities, third-party recipients, or legal requirements
+change, and will revise the &quot;Last updated&quot; date. We will give appropriate notice of material changes
+in the app, on the official website, or through another suitable channel. If Connect later adds an
+account, cloud sync, telemetry, crash upload, advertising, or another remote service, we will update
+this Policy and required user choices before enabling it.</p>
+<h2>14. Contact Us</h2>
+<p>For privacy questions, requests, or complaints:</p>
+<ul>
+<li>Operator: ketty Wu</li>
+<li>Email: <a href="mailto:w494892858@gmail.com">w494892858@gmail.com</a></li>
+</ul>
+<p>You may also complain to the data protection authority with jurisdiction where you live.</p></main></body></html>

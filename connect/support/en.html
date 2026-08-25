@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Connect Support</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><a class="brand" href="/">Connect</a><nav class="languages" aria-label="Language"><a href="zh-Hans.html">简体中文</a><a href="en.html" aria-current="page">English</a></nav></header><main><h1>Connect Support</h1>
+<p>Last updated: August 25, 2026</p>
+<p>Connect is a local-first tool driven by your own Mac. The iPhone companion requires a running Connect
+Mac app and cannot run Claude, Codex, or a shell by itself.</p>
+<h2>1. Contact Support</h2>
+<p>Support email: <a href="mailto:w494892858@gmail.com">w494892858@gmail.com</a></p>
+<p>Include your Connect version, macOS or iOS version, device model, the actions immediately before the
+problem, and the complete on-screen error. Attach only screenshots or logs directly relevant to the
+issue. Do not send passwords, tokens, private keys, or unnecessary project files.</p>
+<h2>2. Common Issues</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table node="[object Object]"><thead><tr><th>Symptom</th><th>Try this first</th></tr></thead><tbody><tr><td>Claude or Codex will not start on the Mac</td><td>Run detection again in Settings &gt; Environment and Capabilities, then use a real terminal to install, finish first-use setup, or sign in to that CLI</td></tr><tr><td>The iPhone cannot find the Mac</td><td>Make sure the Mac is awake and Connect is running; both devices must be reachable through the same Tailscale private network or a mutually reachable LAN</td></tr><tr><td>Pairing fails</td><td>Enable mobile control in Mac settings and refresh the QR code; scan again and confirm only if the short authentication string matches exactly on both devices</td></tr><tr><td>Connected but unable to type</td><td>New devices are read-only; explicitly grant write access from the paired-device list on the Mac</td></tr><tr><td>Camera or local-network access was denied</td><td>Restore the Camera or Local Network permission for Connect in iPhone Settings, then return and retry</td></tr><tr><td>A project is browse-only</td><td>On the Mac, confirm its real path and complete Workspace Trust; the phone cannot make trust decisions for the Mac</td></tr></tbody></table></div>
+<h2>3. Claude, Codex, and Tailscale</h2>
+<p>Claude Code, the Codex CLI, and Tailscale are independent third-party services that you install, sign
+in to, and manage. Connect does not provide their accounts, subscriptions, models, or network service
+and cannot reset passwords, issue refunds, or change provider account settings. Contact the relevant
+provider for account, billing, and service-availability issues.</p>
+<h2>4. Mobile Connection and Security</h2>
+<p>Mobile control is off by default and binds only to a specific Tailscale or private LAN address.
+Connect does not support public addresses, Funnel, public tunnels, UPnP, or NAT port mapping. New
+devices are read-only. Pairing, write access, revocation, and Workspace Trust must be completed on the
+Mac. If the Mac sleeps, Connect quits, or the network is unreachable, the iPhone reports that state
+and stops sending commands.</p>
+<h2>5. Local Data and Deletion</h2>
+<p>Workspace files remain where you selected them. Closing a terminal ends its PTY. Room history,
+settings, pairing records, and audit data are stored in Mac app data. To remove them completely,
+first clear records you no longer need in the app, then use Finder&#x27;s Go to Folder and remove
+<code>~/Library/Application Support/connect</code>. This does not delete original workspaces or third-party
+account data.</p>
+<p>See the <a href="../privacy/">Privacy Policy</a> for the complete data boundary.</p>
+<h2>6. Supported Environments</h2>
+<p>See <a href="../compatibility/">Compatibility</a> for the current public support range. You may report behavior
+outside that range, but it is not promised until verified. Connect is not an emergency service and
+does not provide a service-level guarantee for third-party accounts, networks, or model output.</p></main><footer><a href="/connect/support/">Support</a><a href="/connect/compatibility/">Compatibility</a><a href="/connect/privacy/">Privacy</a></footer></body></html>

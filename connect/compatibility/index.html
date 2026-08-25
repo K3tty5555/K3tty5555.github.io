@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Connect 兼容性</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><a class="brand" href="/">Connect</a><nav class="languages" aria-label="语言"><a href="zh-Hans.html" aria-current="page">简体中文</a><a href="en.html">English</a></nav></header><main><h1>Connect 兼容性</h1>
+<p>最后更新：2026 年 8 月 25 日</p>
+<p>以下范围是当前公开候选已经自动化或真实成品验证的边界。未列出的平台不会被默认为受支持。</p>
+<h2>1. 系统与设备</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="可横向滚动的数据表"><table node="[object Object]"><thead><tr><th>组件</th><th>支持范围</th></tr></thead><tbody><tr><td>Mac</td><td>Apple silicon（arm64），macOS 12 或更高版本</td></tr><tr><td>iPhone</td><td>iOS 16.4 或更高版本</td></tr><tr><td>iPad</td><td>当前不支持</td></tr><tr><td>Intel Mac</td><td>当前不支持</td></tr><tr><td>Android</td><td>保留构建回归，不作为公开发行目标</td></tr></tbody></table></div>
+<h2>2. 第三方 CLI</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="可横向滚动的数据表"><table node="[object Object]"><thead><tr><th>工具</th><th>已验证版本范围</th></tr></thead><tbody><tr><td>Claude Code</td><td><code>&gt;=2.1.201 &lt;3.0.0</code></td></tr><tr><td>Codex CLI</td><td><code>&gt;=0.144.4 &lt;1.0.0</code></td></tr></tbody></table></div>
+<p>Claude Code 和 Codex CLI 必须由用户在 Mac 上自行安装、订阅并登录。范围外版本会显示“尚未验证”，
+而不是假装兼容。第三方 CLI、账号或服务不可用时，Shell 和本地文件能力仍按自身条件工作。</p>
+<h2>3. 网络</h2>
+<p>Mac 与 iPhone 优先通过 Tailscale <code>100.64.0.0/10</code> 私网地址连接；没有 Tailscale 时可回退到双方可达的
+RFC1918 局域网 IPv4。Connect 只绑定具体私网地址，不支持公网地址、通配监听、Tailscale Funnel、
+公网 tunnel、UPnP 或 NAT 端口映射。</p>
+<p>IPv6-only 网络尚未列入支持范围。代理、公司网络策略、休眠和防火墙可能影响设备可达性。</p>
+<h2>4. 语言与权限</h2>
+<p>界面支持简体中文、English 和跟随系统。iPhone 配对需要相机与本地网络权限；拒绝后可以在系统设置
+中恢复。Mac 的工作区启动能力还要求用户在真实路径上完成 Workspace Trust。</p>
+<h2>5. 已知边界</h2>
+<ul>
+<li>iPhone 是伴侣端，不能脱离正在运行且可达的 Connect Mac 应用独立执行任务。</li>
+<li>Mac 进入睡眠、Connect 退出或私网中断时，手机控制不可用。</li>
+<li>Connect 不提供 Claude、Codex 或 Tailscale 的账号、订阅、网络或可用性保证。</li>
+<li>App Store 对 Tailscale 异地能力的最终口径以真实审核结论为准。</li>
+</ul>
+<p>遇到范围内问题，请前往 <a href="../support/">支持</a>。</p></main><footer><a href="/connect/support/">Support</a><a href="/connect/compatibility/">Compatibility</a><a href="/connect/privacy/">Privacy</a></footer></body></html>

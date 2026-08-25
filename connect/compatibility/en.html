@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Connect Compatibility</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><a class="brand" href="/">Connect</a><nav class="languages" aria-label="Language"><a href="zh-Hans.html">简体中文</a><a href="en.html" aria-current="page">English</a></nav></header><main><h1>Connect Compatibility</h1>
+<p>Last updated: August 25, 2026</p>
+<p>The ranges below are backed by current candidate automation or packaged-product evidence. Platforms
+not listed are not assumed to be supported.</p>
+<h2>1. Systems and Devices</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table node="[object Object]"><thead><tr><th>Component</th><th>Supported range</th></tr></thead><tbody><tr><td>Mac</td><td>Apple silicon (arm64), macOS 12 or later</td></tr><tr><td>iPhone</td><td>iOS 16.4 or later</td></tr><tr><td>iPad</td><td>Not currently supported</td></tr><tr><td>Intel Mac</td><td>Not currently supported</td></tr><tr><td>Android</td><td>Build regression only; not a public distribution target</td></tr></tbody></table></div>
+<h2>2. Third-Party CLIs</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table node="[object Object]"><thead><tr><th>Tool</th><th>Verified version range</th></tr></thead><tbody><tr><td>Claude Code</td><td><code>&gt;=2.1.201 &lt;3.0.0</code></td></tr><tr><td>Codex CLI</td><td><code>&gt;=0.144.4 &lt;1.0.0</code></td></tr></tbody></table></div>
+<p>You install, license, and sign in to Claude Code and the Codex CLI on the Mac. Versions outside these
+ranges are reported as not yet verified instead of being presented as compatible. If a third-party
+CLI, account, or service is unavailable, shell and local-file features continue under their own
+requirements.</p>
+<h2>3. Network</h2>
+<p>The Mac and iPhone prefer a Tailscale <code>100.64.0.0/10</code> private address. Without Tailscale, they may use
+a mutually reachable RFC1918 private LAN IPv4 address. Connect binds only to a specific private
+address and does not support public addresses, wildcard listeners, Tailscale Funnel, public tunnels,
+UPnP, or NAT port mapping.</p>
+<p>IPv6-only networks are not currently supported. Proxies, managed-network policy, sleep, and firewalls
+may affect device reachability.</p>
+<h2>4. Languages and Permissions</h2>
+<p>The interface supports Simplified Chinese, English, and following the system language. iPhone pairing
+requires Camera and Local Network access; denied access can be restored in system settings. Starting
+a workspace on the Mac also requires Workspace Trust for its real path.</p>
+<h2>5. Known Boundaries</h2>
+<ul>
+<li>The iPhone is a companion and cannot run tasks without a running, reachable Connect Mac app.</li>
+<li>Mobile control is unavailable while the Mac sleeps, Connect is not running, or the private network is interrupted.</li>
+<li>Connect does not provide or guarantee Claude, Codex, or Tailscale accounts, subscriptions, networks, or availability.</li>
+<li>The final App Store treatment of remote Tailscale use depends on actual App Review results.</li>
+</ul>
+<p>For issues within the supported range, visit <a href="../support/">Support</a>.</p></main><footer><a href="/connect/support/">Support</a><a href="/connect/compatibility/">Compatibility</a><a href="/connect/privacy/">Privacy</a></footer></body></html>

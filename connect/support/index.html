@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Connect 支持</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><a class="brand" href="/">Connect</a><nav class="languages" aria-label="语言"><a href="zh-Hans.html" aria-current="page">简体中文</a><a href="en.html">English</a></nav></header><main><h1>Connect 支持</h1>
+<p>最后更新：2026 年 8 月 25 日</p>
+<p>Connect 是由用户自己的 Mac 驱动的本地优先工具。iPhone 伴侣应用需要连接正在运行的 Connect Mac
+应用，不能单独运行 Claude、Codex 或 Shell。</p>
+<h2>1. 联系支持</h2>
+<p>支持邮箱：<a href="mailto:w494892858@gmail.com">w494892858@gmail.com</a></p>
+<p>来信请附上 Connect 版本、macOS/iOS 版本、设备型号、问题发生前的操作和屏幕上的完整错误文案。
+只附与问题直接相关的截图或日志；不要发送密码、token、私钥或不必要的项目文件。</p>
+<h2>2. 常见问题</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="可横向滚动的数据表"><table node="[object Object]"><thead><tr><th>现象</th><th>首先尝试</th></tr></thead><tbody><tr><td>Mac 上无法启动 Claude 或 Codex</td><td>在“设置 → 环境与能力”重新检测；再打开真实终端完成对应 CLI 的安装、首次设置或重新登录</td></tr><tr><td>iPhone 找不到 Mac</td><td>确认 Mac 已开机且 Connect 正在运行；两台设备需通过同一 Tailscale 私网或可互通的局域网连接</td></tr><tr><td>无法配对</td><td>在 Mac 设置中开启手机远程并刷新二维码；重新扫码，并只在两端短认证字符串完全一致时确认</td></tr><tr><td>已连接但不能输入</td><td>新设备默认只读；在 Mac 的已配对设备列表中明确授予写入权限</td></tr><tr><td>相机或局域网被拒绝</td><td>在 iPhone“设置”中恢复 Connect 的相机或本地网络权限，然后返回应用重试</td></tr><tr><td>项目只能浏览、不能启动终端</td><td>回到 Mac 确认该工作区的真实路径，并完成 Workspace Trust；手机不能替代 Mac 作出信任决定</td></tr></tbody></table></div>
+<h2>3. Claude、Codex 与 Tailscale</h2>
+<p>Claude Code、Codex CLI 和 Tailscale 都是你独立安装、登录和管理的第三方服务。Connect 不提供这些
+账号、订阅、模型或网络服务，也不能重置其密码、退款或修改厂商账号。账号、账单和服务可用性问题
+请直接联系对应提供商。</p>
+<h2>4. 手机连接与安全</h2>
+<p>手机远程默认关闭，只绑定具体的 Tailscale 或局域网私有地址。Connect 不支持公网地址、Funnel、
+公网 tunnel、UPnP 或 NAT 端口映射。新设备默认只读；配对、写入授权、吊销和工作区信任都必须在
+Mac 上完成。Mac 睡眠、退出 Connect 或网络不可达时，iPhone 会诚实显示离线并停止发送命令。</p>
+<h2>5. 本地数据与删除</h2>
+<p>工作区文件保留在你选择的位置。关闭终端会结束对应 PTY；房间历史、设置、配对和审计位于 Mac
+应用数据中。需要彻底移除时，先在应用内清空不再需要的记录，再通过 Finder 的“前往文件夹”删除
+<code>~/Library/Application Support/connect</code>。这不会删除原始工作区，也不会删除第三方账号数据。</p>
+<p>完整数据边界见 <a href="../privacy/">隐私政策</a>。</p>
+<h2>6. 支持范围</h2>
+<p>当前公开支持范围见 <a href="../compatibility/">兼容性</a>。范围外系统或设备可以反馈，但在完成真实验证前不承诺
+可用。Connect 不是紧急服务，也不提供对第三方账号、第三方网络或第三方模型结果的服务等级保证。</p></main><footer><a href="/connect/support/">Support</a><a href="/connect/compatibility/">Compatibility</a><a href="/connect/privacy/">Privacy</a></footer></body></html>
