@@ -1,0 +1,7 @@
+Simple Icons brand glyphs used by Connect are released under CC0 1.0 Universal.
+
+Upstream project: https://github.com/simple-icons/simple-icons
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+No trademark or patent rights are waived by CC0. Product and company names
+remain trademarks of their respective owners.
