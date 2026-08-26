@@ -62,7 +62,6 @@
   --landing-blue-strong: #9e3d1f;
   --landing-shadow: #36575a1f;
   --brand-gradient: linear-gradient(110deg, #fc915e, #39c5c7);
-  --brand-gradient-deep: linear-gradient(110deg, #d9673e, #168e92);
   --motion-fast: 110ms;
   --motion-standard: 180ms;
   --motion-ease: cubic-bezier(0.2, 0, 0.38, 0.9);
@@ -449,7 +448,7 @@ body:has(.home-main) { background: var(--landing-bg); }
 
 .home-main .hero-section.rt-Section { min-height: 700px; padding: 72px 0 0; background: var(--landing-bg); }
 .home-main .hero-copy { width: min(700px, 100%); margin: 0; text-align: left; }
-.home-main .hero-brand.rt-Heading { margin-top: 17px; color: var(--landing-title); font-size: 50px; font-weight: 750; line-height: 1; background: var(--brand-gradient-deep); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.home-main .hero-brand.rt-Heading { margin-top: 17px; color: var(--landing-title); font-size: 50px; font-weight: 750; line-height: 1; background: var(--brand-gradient); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .home-main .hero-headline.rt-Heading { max-width: 680px; margin-top: 18px; color: var(--landing-title); font-size: 35px; font-weight: 680; line-height: 1.22; }
 .hero-agent-name { font-weight: 750; }
 .hero-agent-claude { color: var(--landing-coral-strong); }
@@ -708,4 +707,8 @@ body:has(.home-main) { background: var(--landing-bg); }
   .capability-icon,
   .home-main .platform-card,
   .site-theme:has(.home-main) .primary-nav a::after { transition: none; }
+}
+
+@media (forced-colors: active) {
+  .home-main .hero-brand.rt-Heading { background: none; color: CanvasText; -webkit-text-fill-color: CanvasText; }
 }
