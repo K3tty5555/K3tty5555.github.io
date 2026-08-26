@@ -2,5 +2,6 @@
 
 - Radix Themes 3.3.0 — MIT License (`licenses/radix-themes-3.3.0-MIT.txt`)
 - Lucide React 0.562.0 — ISC License (`licenses/lucide-react-0.562.0-ISC.txt`)
+- Magic UI static adaptations — MIT License (`licenses/magicui-2d671cc-MIT.txt`), source: `magicuidesign/magicui@2d671cc6c0e0f40e28682c9cbddd16694dcfe627`
 
 Connect application source code is not included in this website artifact.
