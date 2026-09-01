@@ -80,39 +80,6 @@
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --page: #263b3e;
-    --canvas: #2b4245;
-    --surface: #30494c;
-    --surface-2: #385255;
-    --surface-3: #435e61;
-    --ink: #f2f3f5;
-    --ink-2: #bac0c8;
-    --ink-3: #929ba7;
-    --line: #50696b;
-    --line-strong: #6b8587;
-    --teal: #5fc5bb;
-    --teal-strong: #82d8cf;
-    --teal-soft: #31514d;
-    --button-bg: #147f83;
-    --button-text: #ffffff;
-    --coral: #e28a6f;
-    --coral-soft: #5b3d31;
-    --blue: #75acd0;
-    --blue-strong: #94c9e9;
-    --blue-soft: #345054;
-    --green-soft: #315148;
-    --focus: #7cb8e6;
-    --shadow: #1c2c2e5c;
-    --shadow-strong: #16242680;
-    --footer: #203638;
-    --footer-text: #f3f4f6;
-    --footer-muted: #9da5b0;
-  }
-}
-
 * { box-sizing: border-box; }
 html {
   min-width: 280px;
@@ -915,18 +882,6 @@ th, td { border-bottom-color: color-mix(in srgb, #ffffff 52%, #83aaa9); }
 .site-footer::before { background: var(--brand-gradient) !important; height: 3px !important; }
 .footer-group a { color: var(--footer-muted); }
 .footer-group a:hover { color: var(--footer-text); }
-
-@media (prefers-color-scheme: dark) {
-  :root { --page: #142a2d; --canvas: #173336; --ink: #ecf8f6; --ink-2: #b0cbc9; --ink-3: #89aaa8; --landing-bg: #142a2d; --landing-surface: color-mix(in srgb, #24494b 76%, transparent); --landing-title: #ecf8f6; --landing-ink: #d3e8e5; --landing-muted: #b0cbc9; --landing-subtle: #89aaa8; --line: color-mix(in srgb, #9bd8d3 28%, #204446); --line-strong: color-mix(in srgb, #b5e5e0 42%, #204446); --footer: #0e2022; --footer-text: #effbf9; --footer-muted: #a6c2bf; --button-text: #153b3d; }
-  body { background: radial-gradient(880px 520px at 3% -4%, color-mix(in srgb, #e79270 20%, transparent), transparent 66%), radial-gradient(900px 560px at 97% 2%, color-mix(in srgb, #66c4c0 22%, transparent), transparent 64%), linear-gradient(145deg, #142b2e 0%, #17383a 55%, #2b292a 100%); }
-  .site-header { background: color-mix(in srgb, #193639 70%, transparent); border-bottom-color: color-mix(in srgb, #b4dfdc 24%, transparent); }
-  .site-button.button-soft.rt-Button { background: color-mix(in srgb, #23484a 76%, transparent) !important; color: var(--ink) !important; border-color: color-mix(in srgb, #b8e1dd 30%, transparent) !important; }
-  .hero-section.rt-Section::before, .guide-title-row, .home-main .platform-card.rt-Card, .guide-step-card.rt-Card, .document-card.rt-Card { background: color-mix(in srgb, #244a4c 66%, transparent) !important; border-color: color-mix(in srgb, #b5e3df 26%, transparent); }
-  .home-main .platform-ready.rt-Card { background: color-mix(in srgb, #2f6a63 60%, transparent) !important; }
-  .home-main .platform-waiting.rt-Card { background: color-mix(in srgb, #714a3f 56%, transparent) !important; }
-  .home-main .platform-planned.rt-Card { background: color-mix(in srgb, #284749 66%, transparent) !important; }
-  .site-footer { background: color-mix(in srgb, #0e2022 92%, transparent); }
-}
 
 @media (max-width: 640px) {
   .primary-nav { display: none; }
