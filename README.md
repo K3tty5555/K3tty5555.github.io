@@ -1,8 +1,10 @@
-# Connect Website
+# K3tty5555 Public Projects
 
-Public static website for Connect. The private Connect application source code is not included here.
+Public static project index. Product pages live under their own paths so the root stays a neutral entry point.
 
-- Product: <https://k3tty5555.github.io/>
+- Project index: <https://k3tty5555.github.io/>
+- Learn UI PM: <https://k3tty5555.github.io/LearnUI_PM/>
+- Connect: <https://k3tty5555.github.io/connect/>
 - Mac download status: <https://k3tty5555.github.io/connect/download/>
 - iPhone setup guide: <https://k3tty5555.github.io/connect/ios/>
 - Support: <https://k3tty5555.github.io/connect/support/>

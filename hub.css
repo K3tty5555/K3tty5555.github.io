@@ -1,0 +1,47 @@
+:root {
+  color-scheme: light;
+  --ink: #17272d;
+  --muted: #63747a;
+  --line: rgba(110, 139, 148, .22);
+  --surface: rgba(255, 255, 255, .70);
+  --surface-strong: rgba(255, 255, 255, .86);
+  --accent: #0c7181;
+  --accent-soft: rgba(126, 206, 211, .22);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #e8f0f2; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255,255,255,.78), transparent 34%),
+    linear-gradient(135deg, #eaf3f4 0%, #dbe9ec 52%, #edf3ef 100%);
+}
+.hub-shell { width: min(100% - 40px, 980px); margin: 0 auto; padding: clamp(72px, 13vh, 136px) 0 44px; }
+.eyebrow { margin: 0 0 22px; color: var(--accent); font: 600 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .14em; }
+h1 { margin: 0; font-size: clamp(42px, 7vw, 76px); line-height: .98; letter-spacing: -.04em; }
+.intro { max-width: 520px; margin: 22px 0 58px; color: var(--muted); font-size: 18px; line-height: 1.65; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.project-card {
+  display: flex; min-height: 300px; flex-direction: column; padding: 28px; color: inherit; text-decoration: none;
+  border: 1px solid var(--line); border-radius: 18px; background: var(--surface);
+  box-shadow: 0 18px 44px rgba(58, 91, 100, .10), inset 0 1px 0 rgba(255,255,255,.86);
+  backdrop-filter: blur(18px) saturate(1.05); transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.project-card:hover { transform: translateY(-3px); border-color: rgba(12,113,129,.42); background: var(--surface-strong); }
+.project-primary { background: linear-gradient(145deg, rgba(255,255,255,.84), var(--accent-soft)); }
+.project-index { color: var(--accent); font: 600 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+h2 { margin: 56px 0 12px; font-size: 30px; letter-spacing: -.03em; }
+.project-card p { max-width: 34ch; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.project-link { margin-top: auto; padding-top: 30px; color: var(--accent); font-size: 14px; font-weight: 650; }
+footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
+footer a { color: inherit; text-underline-offset: 4px; }
+@media (max-width: 680px) {
+  .hub-shell { width: min(100% - 28px, 520px); padding-top: 64px; }
+  .intro { margin-bottom: 38px; font-size: 16px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card { min-height: 250px; padding: 24px; }
+  h2 { margin-top: 40px; font-size: 27px; }
+}
