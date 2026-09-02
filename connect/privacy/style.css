@@ -1046,3 +1046,16 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .relay-hero *, .relay-capabilities *, .relay-mobile *, .relay-faq *, .relay-release *, .relay-end * { animation: none !important; transition: none !important; }
 }
+
+/* English copy has longer labels; give the console's text rail enough measure to stay composed. */
+@media (min-width: 901px) {
+  .relay-hero-grid { grid-template-columns: minmax(390px, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 4vw, 58px); }
+  .relay-actions { flex-wrap: nowrap; }
+  .relay-actions .site-button { padding-right: 17px; padding-left: 17px; white-space: nowrap; }
+  .relay-capabilities .section-heading { max-width: 900px; }
+  .relay-capabilities .section-heading .rt-Heading { max-width: 900px; font-size: clamp(31px, 3.8vw, 48px); }
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .relay-actions { flex-wrap: nowrap; }
+  .relay-actions .site-button { white-space: nowrap; }
+}
