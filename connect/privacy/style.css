@@ -1084,8 +1084,9 @@ body {
   .relay-actions .site-button { white-space: nowrap; }
 }
 @media (min-width: 901px) {
-  .relay-hero .rt-Container { width: calc(100% - 48px); max-width: 1380px; }
-  .relay-hero-grid { max-width: none; grid-template-columns: minmax(460px, .72fr) minmax(0, 1.28fr); gap: clamp(32px, 3vw, 58px); }
+  .relay-hero .rt-Container { width: min(1585px, calc(100% - 152px)); max-width: none; margin-inline: auto; }
+  .relay-hero .rt-ContainerInner { width: 100%; max-width: none; }
+  .relay-hero-grid { max-width: none; grid-template-columns: minmax(460px, .68fr) minmax(0, 1.32fr); gap: clamp(32px, 3vw, 52px); }
 }
 :root {
   --brand-gradient: linear-gradient(108deg, #ff8a68 0%, #ffaf8d 34%, #9be0da 69%, #42bfc0 100%);
