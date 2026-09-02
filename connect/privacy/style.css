@@ -943,6 +943,8 @@ body {
 .relay-stage-label code { color: #37696b; font-size: 10px; }
 .relay-product-frame { margin-top: 14px; overflow: hidden; border: 1px solid color-mix(in srgb, #ffffff 82%, #77a6a6); border-radius: 15px; box-shadow: 0 18px 36px color-mix(in srgb, #24585a 14%, transparent); }
 .relay-desktop-scene { width: 100%; margin: 0; border: 0; border-radius: 0; }
+.relay-workspace-shot { display: block; width: 100%; height: auto; aspect-ratio: 1690 / 827; object-fit: cover; object-position: center; }
+.relay-dom-scene { display: none; }
 .relay-desktop-scene .scene-sidebar-tabs { gap: 5px; font-size: 6px; }
 .relay-desktop-scene .scene-sidebar-tabs strong, .relay-desktop-scene .scene-sidebar-tabs span { white-space: nowrap; }
 .relay-desktop-scene .claude-startup { grid-template-columns: 44px minmax(0, 1fr); gap: 4px; padding: 10px 7px; }
@@ -1041,6 +1043,8 @@ body {
   .relay-actions .site-button { width: 100%; }
   .relay-route { margin-top: 26px; }
   .relay-stage { margin: 0 12px; padding: 12px 12px 10px; border-radius: 18px; }
+  .relay-workspace-shot { display: none; }
+  .relay-dom-scene { display: block; }
   .relay-capabilities.rt-Section, .relay-faq.rt-Section, .relay-release.rt-Section { padding: 78px 18px 88px; }
   .capability-matrix, .relay-faq-list, .relay-platform-list { grid-template-columns: 1fr; }
   .capability-item, .capability-item:nth-child(even) { grid-template-columns: 24px 38px minmax(0, 1fr); padding: 20px 0; border-left: 0; }
@@ -1066,7 +1070,7 @@ body {
 
 /* English copy has longer labels; give the console's text rail enough measure to stay composed. */
 @media (min-width: 901px) {
-  .relay-hero-grid { grid-template-columns: minmax(390px, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 4vw, 58px); }
+  .relay-hero-grid { grid-template-columns: minmax(430px, .78fr) minmax(0, 1.22fr); gap: clamp(28px, 3vw, 52px); max-width: 1280px; }
   .relay-actions { flex-wrap: nowrap; }
   .relay-actions .site-button { padding-right: 17px; padding-left: 17px; white-space: nowrap; }
   .relay-capabilities .section-heading { max-width: 900px; }
