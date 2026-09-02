@@ -910,7 +910,7 @@ body {
 .primary-nav a, .language-link { color: #41666a; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
 .primary-nav a:hover, .language-link:hover { color: #173f45; }
 .relay-hero.rt-Section { position: relative; min-height: 760px; padding: 72px 0 82px; overflow: hidden; background: transparent; }
-.relay-hero::before { position: absolute; top: 42px; right: 4%; left: 4%; height: 505px; border: 1px solid color-mix(in srgb, #ffffff 70%, #7db0ae); border-radius: 30px; background: color-mix(in srgb, #ffffff 26%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 78%, transparent), 0 30px 72px color-mix(in srgb, #286667 12%, transparent); content: ""; pointer-events: none; }
+.relay-hero::before { position: absolute; top: 42px; right: 4%; bottom: 42px; left: 4%; border: 1px solid color-mix(in srgb, #ffffff 70%, #7db0ae); border-radius: 30px; background: color-mix(in srgb, #ffffff 26%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 78%, transparent), 0 30px 72px color-mix(in srgb, #286667 12%, transparent); content: ""; pointer-events: none; }
 .relay-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(300px, .78fr) minmax(0, 1.22fr); gap: clamp(30px, 5vw, 78px); align-items: center; max-width: 1180px; margin: 0 auto; }
 .relay-copy { padding: 34px 0 0 16px; }
 .relay-kicker { display: inline-flex; align-items: center; gap: 9px; color: #4a7475; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
