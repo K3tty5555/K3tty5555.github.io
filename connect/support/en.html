@@ -8,6 +8,11 @@ Mac app and cannot run Claude, Codex, or a shell by itself.</p>
 <p>Include your Connect version, macOS or iOS version, device model, the actions immediately before the
 problem, and the complete on-screen error. Attach only screenshots or logs directly relevant to the
 issue. Do not send passwords, tokens, private keys, or unnecessary project files.</p>
+<p>This site and the Mac download are hosted on GitHub Pages. Access to that domain has long been
+unreliable from mainland China, so you may need to arrange your own network conditions to open this
+page or download the Mac version. The same applies to Claude Code, Codex CLI, and Tailscale — they are
+third-party services you install and sign in to yourself, and their reachability is not determined by
+Connect.</p>
 <h2>2. Common Issues</h2>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table node="[object Object]"><thead><tr><th>Symptom</th><th>Try this first</th></tr></thead><tbody><tr><td>Claude or Codex will not start on the Mac</td><td>Run detection again in Settings &gt; Environment and Capabilities, then use a real terminal to install, finish first-use setup, or sign in to that CLI</td></tr><tr><td>The iPhone cannot find the Mac</td><td>Make sure the Mac is awake and Connect is running; both devices must be reachable through the same Tailscale private network or a mutually reachable LAN</td></tr><tr><td>Pairing fails</td><td>Enable mobile control in Mac settings and refresh the QR code; scan again and confirm only if the short authentication string matches exactly on both devices</td></tr><tr><td>Connected but unable to type</td><td>New devices are read-only; explicitly grant write access from the paired-device list on the Mac</td></tr><tr><td>Camera or local-network access was denied</td><td>Restore the Camera or Local Network permission for Connect in iPhone Settings, then return and retry</td></tr><tr><td>A project is browse-only</td><td>On the Mac, confirm its real path and complete Workspace Trust; the phone cannot make trust decisions for the Mac</td></tr></tbody></table></div>
 <h2>3. Claude, Codex, and Tailscale</h2>
