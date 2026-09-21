@@ -539,8 +539,9 @@ body:has(.home-main) { background: var(--landing-bg); }
 .hero-agent-name { font-weight: 750; }
 /* 主标语的两个重点词沿用图标身份色（珊瑚橙 + 水青绿）。2026-09-18 起主标语不再
    写死 Claude/Codex，这两个类也不再对应厂商品牌；claude/codex 两条保留给能力区
-   与协作流程图里仍按品牌着色的位置。 */
-.hero-agent-agents { color: var(--landing-coral-strong); }
+   与协作流程图里仍按品牌着色的位置。2026-09-21 主标语换成「一窗总览，多端全能」，
+   高亮词随之变为「一窗」与「多端」——reach 即原 agents 那一条，只改名不改色值。 */
+.hero-agent-reach { color: var(--landing-coral-strong); }
 .hero-agent-window { color: var(--landing-teal-strong); }
 .hero-agent-claude { color: var(--landing-coral-strong); }
 .hero-agent-codex { color: var(--landing-teal-strong); }
