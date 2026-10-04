@@ -424,6 +424,11 @@ tr:last-child td { border-bottom: 0; }
 .guide-heading-line { width: 100%; gap: 24px; }
 .guide-heading-line .rt-Heading { font-size: 48px; line-height: 1.1; }
 .guide-lead.rt-Text { max-width: 720px; color: var(--ink-2); font-size: 17px; line-height: 1.72; }
+.release-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 20px; width: 100%; max-width: 720px; margin: 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.release-facts > div { display: contents; }
+.release-facts dt { color: var(--ink-3); font-size: 13px; }
+.release-facts dd { margin: 0; min-width: 0; color: var(--ink); font-size: 14px; }
+.release-facts code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; overflow-wrap: anywhere; }
 .guide-steps.rt-Section { padding: 50px 0; background: var(--page); }
 .guide-step-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .guide-step-card.rt-Card { min-height: 124px; padding: 18px; box-shadow: none; }
