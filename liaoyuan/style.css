@@ -1,0 +1,17 @@
+/* 燎原公开页面（支持页、隐私政策）共用样式。颜色和 App 的 Theme 一致；不引用任何外部字体和脚本 */
+:root { --paper: #F3EFE5; --ink: #1E1C1A; --red: #C83232; --secondary: rgba(30, 28, 26, .65); }
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1A1816; --ink: #EDE7DA; --red: #E0574A; --secondary: rgba(237, 231, 218, .65); }
+}
+body { margin: 0; background: var(--paper); color: var(--ink);
+       font: 17px/1.8 "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", serif; }
+main { max-width: 640px; margin: 0 auto; padding: 48px 24px 64px; }
+h1 { font-size: 40px; font-weight: 900; margin: 0 0 4px; }
+.rule { height: 3px; background: var(--ink); margin: 32px 0 14px; border: 0; }
+h2 { font: 700 13px/1.4 ui-monospace, Menlo, monospace; color: var(--red); margin: 0 0 8px; letter-spacing: .05em; }
+p, li { margin: 8px 0; }
+.meta { font: 13px/1.6 ui-monospace, Menlo, monospace; color: var(--secondary); }
+a { color: var(--red); }
+a.home { color: inherit; text-decoration: none; }
+dt { font-weight: 700; margin-top: 16px; }
+dd { margin: 4px 0 0; }
