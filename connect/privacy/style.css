@@ -1121,3 +1121,35 @@ body:has(.home-main) {
   background-image: radial-gradient(980px 700px at -8% -12%, color-mix(in srgb, #ff7f5d 62%, transparent), transparent 68%), radial-gradient(980px 700px at 108% 4%, color-mix(in srgb, #2db8bb 60%, transparent), transparent 66%), linear-gradient(140deg, #ffd6c5 0%, #e7f4f1 45%, #9edbd7 100%);
   background-attachment: fixed;
 }
+
+/* Release notes: Mac and iPhone / iPad side by side, stacked on narrow screens. */
+.guide-changelog-link { color: #0b6462; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.guide-changelog-link:hover { color: #173f45; }
+.changelog-hero.rt-Section { padding-bottom: 28px; }
+.changelog-hero .guide-title-row { padding: clamp(24px, 4vw, 44px); }
+.changelog-heading.rt-Heading { color: #173f45; font-size: clamp(37px, 5vw, 60px); letter-spacing: -.035em; }
+.changelog-jump { display: flex; flex-wrap: wrap; gap: 10px; }
+.changelog-jump a { padding: 7px 14px; border: 1px solid color-mix(in srgb, #ffffff 60%, #76aaa8); border-radius: 999px; background: color-mix(in srgb, #ffffff 55%, transparent); color: #173f45; font-size: 14px; font-weight: 600; text-decoration: none; }
+.changelog-jump a:hover { background: color-mix(in srgb, #ffffff 80%, transparent); }
+.changelog-body.rt-Section { padding-top: 20px; }
+.changelog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; align-items: start; }
+.changelog-column { min-width: 0; scroll-margin-top: 90px; }
+.changelog-column-head { margin-bottom: 18px; padding: 0 4px; }
+.changelog-column-head .rt-Heading { color: #173f45; }
+.changelog-empty.rt-Text { padding: 0 4px; }
+.changelog-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.changelog-card.rt-Card { min-height: 0; scroll-margin-top: 90px; }
+.changelog-card-head { margin-bottom: 12px; }
+.changelog-card-head .rt-Heading { color: #173f45; font-family: var(--mono); letter-spacing: 0; }
+.changelog-card-head time { color: #526f72; font-family: var(--mono); font-size: 13px; }
+.changelog-items { display: grid; gap: 9px; margin: 0; padding-left: 18px; color: #304a4d; font-size: 15px; line-height: 1.6; }
+.changelog-items li::marker { color: #bd634a; }
+.changelog-tag { display: inline-block; margin-right: 7px; padding: 0 7px; border-radius: 6px; background: color-mix(in srgb, #2e6d96 14%, transparent); color: #235677; font-size: 12px; font-weight: 700; line-height: 20px; vertical-align: 1px; }
+@media (max-width: 860px) {
+  .changelog-grid { grid-template-columns: 1fr; gap: 44px; }
+}
+@media (max-width: 640px) {
+  .changelog-hero.rt-Section { padding-bottom: 18px; }
+  .changelog-body.rt-Section { padding-right: 14px; padding-left: 14px; }
+  .changelog-items { font-size: 14px; }
+}
