@@ -1,0 +1,7 @@
+version: 0.2.0
+files:
+  - url: https://github.com/K3tty5555/K3tty5555.github.io/releases/download/connect-win-v0.2.0/Connect-Setup-0.2.0-win-x64.exe
+    sha512: LYLJqi6JShFuwrsGaB2f6hAeOHNFAgocVwaGBHxCxfHEr9bSwB3B1ycDeLuioAMLFxB3ooHfDmhaeH8H+z028Q==
+    size: 106731190
+releaseDate: '2026-10-15T10:08:47.985Z'
+connectSignature: sDDFE4274s2TdKgGjJcAYp+LrVaZ7555GD3HuIp/fsNs2XdsQazOXTnHmL9/rOhcA2308UTyDdz6l0w94Si5Ag==
