@@ -425,8 +425,8 @@ tr:last-child td { border-bottom: 0; }
 .guide-heading-line .rt-Heading { font-size: 48px; line-height: 1.1; }
 .guide-lead.rt-Text { max-width: 720px; color: var(--ink-2); font-size: 17px; line-height: 1.72; }
 .mirror-download-line { margin-top: -8px; }
-.mirror-download { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-.mirror-download:hover { color: var(--ink-2); }
+.mirror-download, .source-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.mirror-download:hover, .source-link:hover { color: var(--ink-2); }
 .release-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 20px; width: 100%; max-width: 720px; margin: 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 .release-facts > div { display: contents; }
 .release-facts dt { color: var(--ink-3); font-size: 13px; }
