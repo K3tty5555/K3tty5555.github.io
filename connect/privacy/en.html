@@ -37,10 +37,17 @@ for user-directed third-party actions described in Section 5, the Connect Operat
 <div class="table-scroll" role="region" tabindex="0" aria-label="Scrollable data table"><table node="[object Object]"><thead><tr><th>Category</th><th>Where it is processed</th><th>Purpose</th></tr></thead><tbody><tr><td>Workspace paths, file contents, file names, and Git status</td><td>Your computer</td><td>Browse and edit files and run workflows</td></tr><tr><td>Terminal input, output, and session state</td><td>Your computer; an authorized phone may view or enter encrypted content</td><td>Run your own Shell, Claude, or Codex CLI</td></tr><tr><td>Collaboration task state, room history, attachments, and artifact summaries</td><td>Your computer</td><td>Local history, recovery, and orchestration</td></tr><tr><td>Recent projects, layouts, launch commands, avatar, theme, and language</td><td>The relevant device</td><td>Save local preferences</td></tr><tr><td>Pairing public keys, device name, private-network address, scopes, and revocation time</td><td>System secure storage on your computer and phone</td><td>Authenticate, authorize, connect, and revoke devices</td></tr><tr><td>Content-free security audit and performance timing records</td><td>The relevant device</td><td>Diagnose authorization, protocol, and performance issues</td></tr></tbody></table></div>
 <p>Workspace files remain in the location you selected. Removing a project from Connect&#x27;s recent list
 does not delete the original files.</p>
-<h2>4. Direct Computer-to-Phone Connection</h2>
+<h2>4. Computer-to-Phone Connection</h2>
 <p>The mobile bridge is off by default. It listens on one specific Tailscale or private LAN address only
-after you enable it in the desktop settings. Connect does not use a public relay, Tailscale Funnel, UPnP, or
-NAT port mapping.</p>
+after you enable it in the desktop settings. Connect does not use Tailscale Funnel, UPnP, or NAT port
+mapping, and your computer does not open a port to the public internet.</p>
+<p>You may also choose to configure a relay server that you operate yourself. Your computer and phone then
+only make outbound connections to it, and it only forwards connection data that is already encrypted; it
+cannot read terminal content, prompts, model responses, or file contents. The relay address and API key
+are stored only on your devices (on the phone, in the system secure storage) and are never put in the
+pairing QR code. Your relay may log metadata such as connection times and IP addresses according to your
+own configuration, which you control. The Connect Operator does not provide a relay service to users
+and receives no data through any relay.</p>
 <p>Pairing requires scanning a QR code and comparing a short authentication string on both devices.
 Connections use application-layer encryption and device identity verification. New devices are
 read-only by default. Write access must be granted separately on the computer and may be withdrawn or
@@ -122,7 +129,7 @@ absolute security. Trust only workspaces you understand, and protect your device
 accounts, and private network.</p>
 <h2>10. International Processing</h2>
 <p>The Connect Operator does not transfer local app data to its own servers. Third-party CLIs,
-Tailscale, Apple, website hosting/CDN providers, or support services you choose may process
+Tailscale, a relay you operate yourself, Apple, website hosting/CDN providers, or support services you choose may process
 information in the countries where they operate and use transfer mechanisms described in their own
 policies. You decide whether to use these independent services.</p>
 <h2>11. Your Rights and Choices</h2>
