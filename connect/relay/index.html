@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="在自己的服务器上部署 Connect 中继：从连上服务器开始的逐步说明。"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>用自己的服务器连接手机</title><link rel="icon" href="../icon.png"><link rel="stylesheet" href="../radix-themes.css"><link rel="stylesheet" href="style.css"></head><body><link rel="preload" as="image" href="../icon.png"/><div data-is-root-theme="true" data-accent-color="teal" data-gray-color="gray" data-has-background="false" data-panel-background="solid" data-radius="medium" data-scaling="95%" class="radix-themes light site-theme"><header class="site-header"><div class="rt-Container rt-r-size-4 header-container"><div class="rt-ContainerInner"><div class="rt-Flex rt-r-ai-center rt-r-jc-space-between rt-r-gap-5 header-inner"><a class="brand-lockup" href="/connect/" aria-label="Connect"><img src="../icon.png" width="28" height="28" alt=""/><span>Connect</span></a><nav class="primary-nav" aria-label="产品"><a href="/connect/#capabilities">能力</a><a href="/connect/#platforms">下载</a><a class="nav-optional" href="/connect/changelog/">更新</a><a class="nav-optional" href="/connect/support/">支持</a></nav><a class="language-link" href="en.html" lang="en" aria-label="Language: English">English</a></div></div></div></header><main class="document-main"><section class="rt-Section rt-r-size-3 document-section"><div class="rt-Container rt-r-size-3"><div class="rt-ContainerInner"><div class="rt-reset rt-BaseCard rt-Card rt-r-size-4 rt-variant-surface document-card"><article class="document-page"><h1>用自己的服务器连接手机</h1>
+<p>最后更新：2026 年 10 月 28 日</p>
+<p>手机要连上你电脑里的 Connect，需要一条能互相找到对方的网络通道。Connect 默认推荐 Tailscale，
+装好即可用，不需要服务器。<strong>本页是给另一种人准备的：你手上已经有一台云服务器，想自己架这条通道。</strong></p>
+<p>自己架的好处是这条通道完全归你，经过它的数据也只在你自己的机器之间流转。代价是要花十几分钟做一次
+配置，之后基本不用管。</p>
+<h2>这个&quot;中继&quot;到底在做什么</h2>
+<p>手机和电脑都主动去连你的服务器，由它负责把两边接上，就像两个人各自打电话到同一个总机。</p>
+<p>重要的是：<strong>服务器只负责转发，看不懂内容。</strong> 你的终端画面、文件、对话在离开电脑前就已经加密，
+服务器拿到的是一团密文，解不开。它也不保存任何内容、不需要账号、不碰你的 Claude 或 Codex 登录状态。</p>
+<p>这还意味着你<strong>不需要</strong>把电脑上的任何端口暴露到公网。</p>
+<h2>你需要准备什么</h2>
+<ul>
+<li>一台能从公网访问的服务器（最便宜的云主机就够，中继本身几乎不吃资源）</li>
+<li>一个指向这台服务器的域名（例如 <code>relay.yourdomain.com</code>）</li>
+<li>服务器上装好 Docker</li>
+</ul>
+<p>如果以上三样你都有，往下走大概十几分钟。如果没有服务器，用 Tailscale 就好，不必勉强。</p>
+<h2>第一步：把中继跑起来</h2>
+<p>连上你的服务器（在自己电脑的终端里执行，把地址换成你的）：</p>
+<pre><code class="language-sh">ssh 你的用户名@你的服务器地址
+</code></pre>
+<p>把中继的部署文件取下来，进入目录并启动：</p>
+<pre><code class="language-sh">git clone https://github.com/K3tty5555/connect-relay.git
+cd connect-relay
+cp .env.example .env
+docker compose up -d --build
+</code></pre>
+<p><code>-d</code> 的意思是在后台一直运行，关掉 ssh 窗口它也不会停。</p>
+<h2>第二步：生成一把钥匙</h2>
+<p>这把钥匙决定了谁能用你的中继——没有它，别人就算知道你的地址也连不上。</p>
+<pre><code class="language-sh">docker compose exec relay node /app/relay-server.mjs keygen
+</code></pre>
+<p>屏幕上会打印出一串以 <code>ck_live_</code> 开头的字符。<strong>这串字符只会显示这一次</strong>，请立刻复制保存到你的密码管理器。
+服务器上只留一份摘要，丢了没法找回，只能重新生成一把。</p>
+<p>不要把它发到聊天工具、写进网址、贴进公开仓库。</p>
+<h2>第三步：配一个 https 地址</h2>
+<p>浏览器和手机都要求加密连接，所以中继需要一个 <code>wss://</code> 开头的地址（可以理解成&quot;给通道用的 https&quot;）。</p>
+<p>部署目录里的 <code>Caddyfile.example</code> 是一份现成的参考配置，照着改成你的域名即可。它会自动申请证书。
+要点有两个：<strong>只放行 <code>/v1/relay</code> 这一个路径</strong>，不要把容器的 8787 端口直接开到公网。</p>
+<p>弄好之后，你的地址形如：</p>
+<pre><code>wss://relay.yourdomain.com/v1/relay
+</code></pre>
+<h2>第四步：填进 Connect</h2>
+<p><strong>先在电脑上填：</strong></p>
+<p>设置 → 手机远程 → 展开高级设置，找到&quot;外网 Relay&quot;：</p>
+<ol>
+<li>地址填 <code>wss://relay.yourdomain.com/v1/relay</code></li>
+<li>API Key 填第二步保存的那串 <code>ck_live_…</code></li>
+<li>点&quot;保存 Relay&quot;</li>
+</ol>
+<p>下面两栏&quot;备用 Relay&quot;可以留空。如果你有第二台服务器，填进去，主通道不通时会自动改走备用。</p>
+<p><strong>再在手机上填同样的内容：</strong></p>
+<p>手机 Connect 的设置里有相同的两栏，填<strong>完全一样</strong>的地址和 Key。两边不一致就会连不上。</p>
+<p>填好后用手机扫码配对一次即可。配对本身也能走你自己的中继，不需要 Tailscale。</p>
+<h2>遇到问题</h2>
+<p><strong>手机一直连不上</strong></p>
+<p>先确认地址以 <code>wss://</code> 开头、结尾是 <code>/v1/relay</code>，两端一字不差。再在服务器上看日志：</p>
+<pre><code class="language-sh">docker compose logs -f relay
+</code></pre>
+<p><strong>想换掉或停用这把钥匙</strong></p>
+<p>替换服务器上的 key 文件后重启容器即可立即生效：</p>
+<pre><code class="language-sh">docker compose restart relay
+</code></pre>
+<p><strong>想完全不用中继了</strong></p>
+<p>在电脑设置里点&quot;清除 Relay&quot;，手机端同样清除，两边都会回到 Tailscale 或局域网连接。</p>
+<h2>几点说明</h2>
+<ul>
+<li>中继不提供账号系统、管理后台，也不会列出你的项目目录——它只是一条通道。</li>
+<li>中继只转发加密帧，无法读取、也无法保存你的任何内容。</li>
+<li>如果多人共用一台中继，请给每个人<strong>单独生成一把钥匙</strong>，这样可以单独停用其中任何一把。</li>
+<li>服务器的带宽决定手机端看终端画面的流畅度。日常使用占用很小，但若你用手机长时间看网页镜像，
+留意一下流量。</li>
+</ul>
+<p>更详细的部署说明（参数、密钥文件格式、通道自检）在仓库里的 <code>DEPLOY.md</code>。
+中继代码以 MIT 许可证公开，你可以自由查看和修改：<a href="https://github.com/K3tty5555/connect-relay">https://github.com/K3tty5555/connect-relay</a></p></article></div></div></div></section></main><footer class="site-footer"><div class="rt-Container rt-r-size-4"><div class="rt-ContainerInner"><div class="rt-Grid rt-r-gtc-2 md:rt-r-gtc-4 rt-r-gap-6 footer-inner"><div class="rt-Box footer-brand"><div class="rt-Text rt-r-size-2 rt-r-weight-bold">Connect</div><p data-accent-color="gray" class="rt-Text rt-r-size-2">Connect 是用户自备 AI 的本地优先工具。</p></div><div class="rt-Flex rt-r-fd-column rt-r-gap-2 footer-group"><div class="rt-Text rt-r-size-2 rt-r-weight-bold">产品</div><a href="/connect/#capabilities">能力</a><a href="/connect/#faq">常见问题</a><a href="/connect/#platforms">下载</a></div><div class="rt-Flex rt-r-fd-column rt-r-gap-2 footer-group"><div class="rt-Text rt-r-size-2 rt-r-weight-bold">资源</div><a href="/connect/changelog/">更新记录</a><a href="/connect/support/">支持</a><a href="/connect/compatibility/">兼容性</a><a href="/connect/privacy/">隐私</a></div><div class="rt-Flex rt-r-fd-column rt-r-gap-2 footer-group"><div class="rt-Text rt-r-size-2 rt-r-weight-bold">平台</div><a href="/connect/download/">Mac 下载</a><a href="/connect/ios/">iPhone 指引</a><a href="/connect/windows/">Windows 下载</a><a href="/connect/android/">Android 下载</a></div></div></div></div></footer></div></body></html>
